@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idRLContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <!--on below line we are creating edit text
+        for adding a new item to list-->
+    <EditText
+        android:id="@+id/idEdtItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.Fsc_demo_1.AppBarOverlay">
+        android:layout_margin="4dp"
+        android:layout_toStartOf="@id/idBtnAdd"
+        android:hint="Enter item name to add in list"
+        android:autofillHints="."
+        tools:ignore="HardcodedText,TextFields" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Fsc_demo_1.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <!--button for adding item from edit text to list-->
+    <Button
+        android:id="@+id/idBtnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_alignParentEnd="true"
+        android:layout_margin="4dp"
+        android:text="Add"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!--list view to display list of languages-->
+    <ListView
+        android:id="@+id/idLVLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEdtItemName" />
+
+</RelativeLayout>
