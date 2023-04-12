@@ -1,76 +1,63 @@
 package cs.nmsu.edu.demo_1;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import cs.nmsu.edu.demo_1.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    // on below line we are creating variables.
+    private ListView languageLV;
+    private Button addBtn;
+    private EditText itemEdt;
+    private ArrayList<String> lngList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        // on below line we are initializing our variables.
+        languageLV = findViewById(R.id.idLVLanguages);
+        addBtn = findViewById(R.id.idBtnAdd);
+        itemEdt = findViewById(R.id.idEdtItemName);
+        lngList = new ArrayList<>();
 
-        setSupportActionBar(binding.toolbar);
+        // on below line we are adding items to our list
+        lngList.add("C++");
+        lngList.add("Python");
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        // on the below line we are initializing the adapter for our list view.
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lngList);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        // on below line we are setting adapter for our list view.
+        languageLV.setAdapter(adapter);
+
+        // on below line we are adding click listener for our button.
+        addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                // on below line we are getting text from edit text
+                String item = itemEdt.getText().toString();
+
+                // on below line we are checking if item is not empty
+                if (!item.isEmpty()) {
+
+                    // on below line we are adding item to our list.
+                    lngList.add(item);
+
+                    // on below line we are notifying adapter
+                    // that data in list is updated to
+                    // update our list view.
+                    adapter.notifyDataSetChanged();
+                }
+
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
     }
 }
