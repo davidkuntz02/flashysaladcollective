@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:layout_toLeftOf="@id/idBtnAdd"
-        android:hint="Enter item name to add in ist" />
+        android:hint="Enter item name to add in list" />
 
     <!--button for adding item from edit text to list-->
     <Button
