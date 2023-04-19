@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     //notification variables
     private static final String CHANNEL_ID = "tomato";
+    private CharSequence textTitle = "Reminder";
+    private CharSequence textContent = "fix this";
+
+    private int notificationId = 0;
 
     //list variables
     private ListView languageLV;
@@ -49,14 +54,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //for the notifications
+        createNotificationChannel();
+
         // Create an explicit intent for an Activity in your app
         Intent intent = new Intent(this, AlertDetails.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
         //notification object builder
-        CharSequence textTitle = "Reminder";
-        CharSequence textContent = "fix this";
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(textTitle)
@@ -65,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 // Set the intent that will fire when the user taps the notification
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
+
+        //actually show the notification?
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
 
 
 
@@ -91,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
                 // on below line we are getting text from edit text
                 String item = itemEdt.getText().toString();
 
+                textContent = item;
+
                 // on below line we are checking if item is not empty
                 if (!item.isEmpty()) {
 
@@ -101,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
                     // that data in list is updated to
                     // update our list view.
                     adapter.notifyDataSetChanged();
+
+
+                    // notificationId is a unique int for each notification that you must define
+                    //notificationManager.wait(5000);
+                    notificationManager.notify(notificationId, builder.build());
+                    //save notification id somehow
+                    notificationId++;
 
                 }
 
