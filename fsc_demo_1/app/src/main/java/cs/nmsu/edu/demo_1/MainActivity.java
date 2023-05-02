@@ -59,5 +59,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        findViewById(R.id.delete).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (link_list.size() >0) {
+                    if (!name.getText().toString().isEmpty()) {
+                        link_list.remove(name.getText().toString());
+                        arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, link_list);
+                        listView.setAdapter(arrayAdapter);
+                        Toast.makeText(MainActivity.this, "deleted", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "There is no element to delete", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
