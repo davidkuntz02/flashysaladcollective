@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/idRLContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <!--Task Title Input-->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="New Task" />
+
+        <EditText
+        android:id="@+id/idEdtItemName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="4dp"
+        android:layout_above="@id/editTextTime"
+        android:hint="Enter item name to add in list" />
+        <!--Task Duration Input (time input)-->
+
+        <!--Task Notification Method Input (dropdown list options)-->
+
+
+    <!--button for adding item from edit text to list-->
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:inputType="time" />
+
+        <Button
+        android:id="@+id/idBtnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="4dp"
+        android:text="Add"
+        android:textAllCaps="false" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
