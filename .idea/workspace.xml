@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80aa1336-77d6-452b-ad2f-cb06df69a9ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/fsc_demo/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/HomeActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/NotificationReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/res/drawable/Tomato.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/add_task_view.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,21 +26,30 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OfiJXOULEeiS0PYiSu5iMeEozP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/cierr/Programs/flashysaladcollective/flashysaladcollective",
+    "last_opened_file_path": "C:/Users/badaw/Downloads/Android Studio/CS-371/flashysaladcollective/Tomato/app/src/main/res/drawable",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\badaw\Downloads\Android Studio\CS-371\flashysaladcollective\Tomato\app\src\main\res\drawable" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="C:/Users/cierr/Programs/flashysaladcollective/flashysaladcollective/fsc_demo_1/app/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -76,5 +86,19 @@
       <updated>1681957965827</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

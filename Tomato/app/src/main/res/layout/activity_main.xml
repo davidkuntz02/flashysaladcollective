@@ -1,35 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Tomato.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#ffff0000"
-            app:popupTheme="@style/Theme.Tomato.PopupOverlay"
-            app:title="Tomato Home" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:text="Reminders"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- Button to add a new reminder -->
+    <Button
+        android:id="@+id/buttonAddReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Add Reminder" />
+
+    <!-- List of reminders -->
+    <ListView
+        android:id="@+id/listViewReminders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <!-- Radio buttons for selecting notification time -->
+    <TextView
+        android:id="@+id/textViewNotificationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Time:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupNotificationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButton5min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Minutes" />
+
+        <RadioButton
+            android:id="@+id/radioButton30min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 Minutes" />
+
+        <RadioButton
+            android:id="@+id/radioButton1hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Hour" />
+
+        <RadioButton
+            android:id="@+id/radioButton1day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Day" />
+
+    </RadioGroup>
+
+</LinearLayout>
