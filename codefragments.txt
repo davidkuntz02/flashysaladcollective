@@ -1,0 +1,52 @@
+    <!--on below line we are creating edit text
+        for adding a new item to list-->
+    <EditText
+        android:id="@+id/idEdtItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_toLeftOf="@id/idBtnAdd"
+        android:hint="Enter item name to add in list" />
+
+    <!--button for adding item from edit text to list-->
+    <Button
+        android:id="@+id/idBtnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="4dp"
+        android:text="Add"
+        android:textAllCaps="false" />
+
+    <!--list view to display list of languages-->
+    <ListView
+        android:id="@+id/idLVLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEdtItemName" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
+        //the plus sign button in the corner for adding things
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                    // notificationId is a unique int for each notification that you must define
+                    //notificationManager.wait(5000);
+                    notificationManager.notify(notificationId, builder.build());
+                    //save notification id somehow
+                    notificationId++;
+            }
+        });

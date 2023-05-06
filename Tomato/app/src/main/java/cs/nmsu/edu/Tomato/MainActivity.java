@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     //list variables
     private ListView languageLV;
+    private Button btnStart;
     private Button addBtn;
     private EditText itemEdt;
     private ArrayList<String> lngList;
@@ -87,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         // on below line we are initializing our variables.
-        languageLV = findViewById(R.id.idLVLanguages);
+        languageLV = findViewById(R.id.);
+        btnStart = findViewById(R.id.btnStart);
         addBtn = findViewById(R.id.idBtnAdd);
         itemEdt = findViewById(R.id.idEdtItemName);
         lngList = new ArrayList<>();
@@ -102,45 +103,31 @@ public class MainActivity extends AppCompatActivity {
 
         // on below line we are setting adapter for our list view.
         languageLV.setAdapter(adapter);
+//
+//        btnStart.setOnClickListener(v -> {
+//            Intent startIntent = new Intent(v.getContext(),AddTask.class);
+//            startActivity(startIntent);
+//        }); //start button listener
 
         // on below line we are adding click listener for our button.
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // on below line we are getting text from edit text
-                String item = itemEdt.getText().toString();
+        addBtn.setOnClickListener(v -> {
+            // on below line we are getting text from edit text
+            String item = itemEdt.getText().toString();
 
-                textContent = item;
+            textContent = item;
 
-                // on below line we are checking if item is not empty
-                if (!item.isEmpty()) {
+            // on below line we are checking if item is not empty
+            if (!item.isEmpty()) {
 
-                    // on below line we are adding item to our list.
-                    lngList.add(item);
+                // on below line we are adding item to our list.
+                lngList.add(item);
 
-                    // on below line we are notifying adapter
-                    // that data in list is updated to
-                    // update our list view.
-                    adapter.notifyDataSetChanged();
-
-                }
+                // on below line we are notifying adapter
+                // that data in list is updated to
+                // update our list view.
+                adapter.notifyDataSetChanged();
 
             }
         }); //addBtn listener
-
-        //the plus sign button in the corner for adding things
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-                    // notificationId is a unique int for each notification that you must define
-                    //notificationManager.wait(5000);
-                    notificationManager.notify(notificationId, builder.build());
-                    //save notification id somehow
-                    notificationId++;
-            }
-        });
     }//oncreate
 }
