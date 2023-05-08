@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80aa1336-77d6-452b-ad2f-cb06df69a9ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CNAME" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.html" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testreport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OfiJXOULEeiS0PYiSu5iMeEozP" />
   <component name="ProjectLevelVcsManager">
