@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idRLContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--on below line we are creating edit text
+        for adding a new item to list-->
+
+    <!--button for adding item from edit text to list-->
+
+    <!--list view to display list of languages-->
+
+    <EditText
+        android:id="@+id/idEdtItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="-75dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toStartOf="@id/idBtnAdd"
+        android:layout_toEndOf="@+id/delete"
+        android:autofillHints="."
+        android:hint="Enter item name to add in list"
+        tools:ignore="HardcodedText,TextFields" />
+
+    <Button
+        android:id="@+id/idBtnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="9dp"
+        android:text="Add"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete" />
+
+    <ListView
+        android:id="@+id/idLVLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEdtItemName"
+        android:layout_marginTop="69dp" />
+
+</RelativeLayout>
