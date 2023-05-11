@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80aa1336-77d6-452b-ad2f-cb06df69a9ad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/Reminder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/ReminderAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/item_reminder.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/res/drawable/Tomato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/NotificationReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tomato/app/src/main/java/cs/nmsu/edu/Tomato/NotificationReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tomato/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

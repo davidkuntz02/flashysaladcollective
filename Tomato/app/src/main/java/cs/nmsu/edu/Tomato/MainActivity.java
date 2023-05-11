@@ -1,8 +1,8 @@
 package cs.nmsu.edu.Tomato;
+
 import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,10 +11,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -22,10 +21,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+
 
 public class MainActivity extends AppCompatActivity {
     // Define constants for the notification
@@ -76,21 +77,21 @@ public class MainActivity extends AppCompatActivity {
                 showAddReminderDialog();
             }
         });
+    }
 
-        // Create the notification channel if running on Android Oreo or higher
+    // Create the notification channel
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "ReminderChannel";
             String description = "Channel for Reminder Notifications";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("notifyLemubit", name, importance);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
 
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }
-
 
     // Show a dialog to add a new reminder
     private void showAddReminderDialog() {
@@ -139,10 +140,11 @@ public class MainActivity extends AppCompatActivity {
 
         builder.create().show();
     }
+
     private void addReminder(String title, String desc, long time) {
         Reminder reminder = new Reminder(title, desc, time);
-        reminders.add(reminder);
-        adapter.notifyDataSetChanged();
+        remindersList.add(reminder);
+        reminderAdapter.notifyDataSetChanged();
 
         Intent intent = new Intent(MainActivity.this, NotificationReceiver.class);
         intent.putExtra("title", title);
@@ -156,5 +158,4 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Reminder added", Toast.LENGTH_SHORT).show();
     }
-
-
+}

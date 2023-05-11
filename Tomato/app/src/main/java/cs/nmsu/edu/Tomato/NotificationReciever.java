@@ -12,8 +12,6 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
-import java.util.Calendar;
-
 public class NotificationReceiver extends BroadcastReceiver {
     private static final String CHANNEL_ID = "REMINDER_CHANNEL_ID";
     private static final CharSequence CHANNEL_NAME = "REMINDER_CHANNEL_NAME";
@@ -27,10 +25,18 @@ public class NotificationReceiver extends BroadcastReceiver {
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         Intent mainIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, mainIntent, 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Reminder Channel");
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED);
+            channel.enableVibration(true);
+            notificationManager.createNotificationChannel(channel);
+        }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
@@ -39,18 +45,6 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setContentIntent(contentIntent)
                 .setAutoCancel(true)
                 .setSound(soundUri);
-
-        // Schedule the notification based on user input
-        int delayInMinutes = intent.getIntExtra("delayInMinutes", 0);
-        if (delayInMinutes > 0) {
-            Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.MINUTE, delayInMinutes);
-            long futureInMillis = cal.getTimeInMillis();
-
-            PendingIntent scheduledIntent = PendingIntent.getBroadcast(context, notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, scheduledIntent);
-        }
 
         notificationManager.notify(notificationId, builder.build());
     }
